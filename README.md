@@ -1,0 +1,2 @@
+# captchautils
+Set of PHP classes to reduce duplication of code used to verify various CAPTCHA-esque things (Cloudflare Turnstile and eventually ALTCHA, hCAPTCHA, etc.) that don't have their own maintained packages. Google's ReCAPTCHA is deliberately ommitted since they publish their own PHP package.

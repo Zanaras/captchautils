@@ -1,0 +1,21 @@
+{
+  "name": "kagurati/captchautils",
+  "description": "PHP classes for interacting with CF Turnstile, hCaptcha, or ALTCHA",
+  "license": "Unlicense",
+  "authors": [
+    {
+      "name": "Andrew Gwynn"
+    }
+  ],
+  "version": "v1.0.0-dev",
+  "require": {
+    "php": ">=8.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Turnstile\\": "src/"
+    }
+  }
+}
