@@ -1,6 +1,6 @@
 <?php
 
-namespace Turnstile;
+namespace CAPTCHAUtils;
 
 class Turnstile {
 
