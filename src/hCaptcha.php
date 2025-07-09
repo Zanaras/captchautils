@@ -9,9 +9,19 @@ class hCaptcha {
 	public function __construct(private string $secretKey) {
 	}
 
+	/**
+	 * Takes a user submitted response and validates it against the hCaptcha API.
+	 * @param $response
+	 * @param $remoteIP
+	 *
+	 * @return array|string[]
+	 */
 	public function verify($response, $remoteIP = null): array {
 		$curl = curl_init($this->apiEndpoint);
-		$data = ['secret' => $this->secretKey, 'remoteip' => $remoteIP, 'response' => $response];
+		$data = ['secret' => $this->secretKey, 'response' => $response];
+		if ($remoteIP) {
+			$data['remoteip'] = $remoteIP;
+		}
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
