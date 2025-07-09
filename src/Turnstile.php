@@ -12,6 +12,9 @@ class Turnstile {
 	public function verify($response, $remoteIP = null): array {
 		$curl = curl_init($this->apiEndpoint);
 		$data = ['secret' => $this->secretKey, 'response' => $response];
+		if ($remoteIP) {
+			$data['remoteip'] = $remoteIP;
+		}
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
