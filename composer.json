@@ -7,7 +7,7 @@
       "name": "Andrew Gwynn"
     }
   ],
-  "version": "v1.0.0-dev",
+  "version": "v1.0.4",
   "require": {
     "php": ">=8.0",
     "ext-curl": "*",
